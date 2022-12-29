@@ -1,0 +1,27 @@
+
+
+
+body {
+	background: #d8effd;
+	
+}
+
+.container {
+	
+    padding: 150px;
+	justify-content: center;
+    
+            
+}
+
+button {
+	cursor: pointer;
+
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 64px;
+    object-fit: cover;
+    width: 64px;
+}
