@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, HomeAdmin } from "./pages/Home";
 
 
+import Service from "./pages/Service"
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
@@ -20,7 +22,8 @@ root.render(
     <Routes>
       <Route path="/" element={<LoginPage/>}/>
       <Route path="/home" element={<Home/>}/>
-      <Route path="/admin" element={<h1>Soy una vista de administrador</h1>}></Route>
+      <Route path="/service" element={<Service/>}/>
+      {/* <Route path="/admin" element={<h1>Soy una vista de administrador</h1>}></Route> */}
     </Routes>
     
   </BrowserRouter>

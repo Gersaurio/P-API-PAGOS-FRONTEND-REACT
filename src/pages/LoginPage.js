@@ -4,6 +4,7 @@ import "./style.css";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 
+
 const LoginPage = (props) => {
   const loginPageStyle = {
     margin: "32px auto 37px",
@@ -29,6 +30,7 @@ const LoginPage = (props) => {
                 className={"form-control"}
                 placeholder="example@email.com"
                 
+                
               />
               {touched.email && errors.email && (
                 <span className="help-block text-danger">{errors.email}</span>
@@ -41,6 +43,7 @@ const LoginPage = (props) => {
                 name="password"
                 className={"form-control"}
                 placeholder="Password"
+               
                 
               />
               {touched.password && errors.password && (
@@ -73,14 +76,14 @@ const LoginFormik = withFormik({
     password: Yup.string().required("Password is required"),
   }),
 
+
+
+
+
   handleSubmit: (values) => {
     const REST_API_URL = "http://127.0.0.1:8000/usuario/usuario/?format=json";
     
   
-    
-
-
-
     fetch(REST_API_URL, {
       method: 'post',
       body: JSON.stringify(values)

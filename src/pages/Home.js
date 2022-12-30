@@ -31,6 +31,7 @@ export const Home = () => (
       </ul>
     </div>
 
+   
 
     <ul class="nav navbar-nav navbar-right">
         <img class="avatar" src="https://i.pinimg.com/236x/ce/59/83/ce59837dd46efcaa5549a75bf2b1e443.jpg" alt="Avatar"/>
@@ -39,7 +40,16 @@ export const Home = () => (
 
     
   </nav>
+
+
+
+
+
 );
+
+
+
+
 
 
 

@@ -25,3 +25,19 @@ button {
     object-fit: cover;
     width: 64px;
 }
+
+img {
+    border-radius: 50%;
+    height: 64px;
+    object-fit: cover;
+    width: 64px;
+}
+
+
+.servicio {
+	
+    padding: 50px;
+	justify-content: center;
+    margin-top: 1%;
+            
+}
