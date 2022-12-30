@@ -81,7 +81,7 @@ const LoginFormik = withFormik({
 
 
   handleSubmit: (values) => {
-    const REST_API_URL = "http://127.0.0.1:8000/usuario/usuario/?format=json";
+    const REST_API_URL = "http://127.0.0.1:8000/usuario/usuario/?format=json"; 
     
   
     fetch(REST_API_URL, {

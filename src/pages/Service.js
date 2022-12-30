@@ -1,13 +1,20 @@
 import axios from "axios"
 import React, { Component, Fragment } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
 
 const url ="http://127.0.0.1:8000/payment/services/"
 
 class Service extends Component {
     state={
-    data:[]
+    data:[],
+    modalInsertar: false,
+    form:{
+        logo: '',
+        name: '',
+        description:''
+    }
     }
 
     peticionGet=()=>{
@@ -16,6 +23,40 @@ class Service extends Component {
         })
     }
 
+    peticionPost=async()=>{
+        delete this.state.form.id;
+       await axios.post(url,this.state.form).then(response=>{
+            this.modalInsertar();
+            this.peticionGet();
+        }).catch(error=>{
+            console.log(error.message);
+        })
+    }
+
+
+
+
+
+    modalInsertar=()=>{
+        this.setState({modalInsertar: !this.state.modalInsertar});
+    }
+
+    handleChange=async e=>{
+        e.persist();
+        await this.setState({
+            form:{
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+        });
+        console.log(this.state.form)
+
+
+
+    }
+
+
+
     componentDidMount() {
         this.peticionGet();
     }
@@ -23,6 +64,7 @@ class Service extends Component {
 
 
     render(){
+        const {form}=this.state;
         return(
             <Fragment>
                 <div class="servicio">
@@ -54,8 +96,52 @@ class Service extends Component {
                     
                 </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-lg ">Agregar</button>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class="btn btn-primary btn-lg " onClick={()=>this.modalInsertar()}>Agregar</button>
                 </div>
+
+
+                <Modal isOpen={this.state.modalInsertar}>
+                        <ModalHeader style={{display: 'block'}}>
+                            {/* <span style={{float: 'right'}}>x</span> */}
+                        </ModalHeader>
+                        <ModalBody>
+                            <div className="form-group">
+                                <label htmlFor="id">ID</label>
+                                <input className="form-control" type="text" name="id" id="id" readOnly onChange={this.handleChange} value={this.state.data.length+1}/>
+                                <br />
+                                <label htmlFor="logo">Logo (URL de la imagen)</label>
+                                <input className="form-control" type="text" name="logo" id="logo" onChange={this.handleChange} value={form.logo}/>
+                                <br />
+                                <label htmlFor="name">Nombre del servicio</label>
+                                <input className="form-control" type="text" name="name" id="name" onChange={this.handleChange} value={form.name}/>
+                                <br />
+                                <label htmlFor="description">Descripción</label>
+                                <input className="form-control" type="text" name="description" id="description" onChange={this.handleChange} value={form.description}/>
+                                <br />
+
+                            </div>
+
+                        </ModalBody>
+
+                        <ModalFooter>
+                            <button className="btn btn-success" onClick={()=>this.peticionPost()}>
+                            Insertar
+                            </button>
+                                <button className="btn btn-danger" onClick={()=>this.modalInsertar()}>Cancelar</button>
+                        </ModalFooter>
+
+
+
+
+
+                </Modal>
+
+
+
+
+                </div>
+                
             </Fragment>
             )
         }

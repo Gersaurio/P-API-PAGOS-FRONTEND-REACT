@@ -2,7 +2,7 @@
 
 
 body {
-	background: #d8effd;
+	background-color: #e7f0f5;
 	
 }
 
@@ -39,5 +39,12 @@ img {
     padding: 50px;
 	justify-content: center;
     margin-top: 1%;
-            
+    
 }
+
+.table {
+    background-color: rgb(255, 255, 255);
+    
+}
+
+
