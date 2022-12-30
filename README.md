@@ -9,9 +9,14 @@ Proyecto realizado por los alumnos:
 
 Enlace del repositorio con la API de pagos: https://github.com/dyjhor014/api_pagos/tree/master
 
+## Capturas:
+
+![capturafrontend1](https://user-images.githubusercontent.com/113312690/210049780-66fcc3f1-23ed-4eac-8b55-5fa9c4ded085.JPG)
 
 
 
+
+![catpura frontend2](https://user-images.githubusercontent.com/113312690/210049821-cf104209-362f-457a-8262-8809ebe49f4f.JPG)
 
 
 # Getting Started with Create React App
