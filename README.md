@@ -1,5 +1,14 @@
 # PROYECTO FRONTEND PARA UNA API DE PAGOS DE SERVICIOS
 
+Proyecto realizado por los alumnos:
+
+
+*Gerson Vargas Polo 
+
+*Jordy Cruz Suasnabar
+
+Enlace del repositorio con la API de pagos: https://github.com/dyjhor014/api_pagos/tree/master
+
 
 
 
